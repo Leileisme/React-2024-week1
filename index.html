@@ -13,11 +13,13 @@
 
   <style>
     .card-img-top {
-      width: 50%;
+      width: 38%;
     }
 
     .card-img-bottom {
-      width: 100%;
+      object-fit: cover;
+      height: 200px;
+      width: auto;
     }
   </style>
 
@@ -139,7 +141,7 @@
                       <h4 className="card-title">更多圖片</h4>
                         {
                           selectProduct.imagesUrl.map(url => (
-                            <img key={url} src={url} alt="更多圖片" className="card-img-bottom" />
+                            <img key={url} src={url} alt="更多圖片" className="card-img-bottom me-2" />
                           ))
                         }
                     </div>
