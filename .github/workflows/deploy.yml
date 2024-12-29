@@ -1,0 +1,22 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 在 main 分支有推送時觸發
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: 檢查程式碼
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: 部署到 GitHub Pages
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./ # 將專案根目錄的內容部署到 GitHub Pages
